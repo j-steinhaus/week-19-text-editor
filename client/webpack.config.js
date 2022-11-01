@@ -5,10 +5,6 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
 plugins: [
-  new HtmlWebpackPlugin({
-    template: './index.html',
-    title: 'Text Editor',
-  }),
   new WebpackPwaManifest({
     name: 'Text Editor',
     short_name: 'Jate',
@@ -28,6 +24,10 @@ plugins: [
   new InjectManifest({
     swSrc: './src-sw.js',
     swDest: 'service-worker.js',
+  }),
+  new HtmlWebpackPlugin({
+    template: './index.html',
+    title: 'Text Editor',
   }),
 ],
 
