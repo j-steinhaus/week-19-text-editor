@@ -6,10 +6,6 @@ A Text Editor App using Progressive Web Application(PWA).
 1. [User Story](#userStory)
 2. [Installations](#installations)
 3. [Tech Use](#techUse)
-5. [Visuals](#visuals)
-4. [Contributions](#contributions)
-7. [Web Deployment](#webDeployment)
-
 
 ## User Story
 AS A developer
