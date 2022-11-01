@@ -4,6 +4,33 @@ const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
+plugins: [
+  new HtmlWebpackPlugin({
+    template: './index.html',
+    title: 'Text Editor',
+  }),
+  new WebpackPwaManifest({
+    name: 'Text Editor',
+    short_name: 'Jate',
+    description: 'Text Editor',
+    background_color: '#272822',
+    start_url: '/',
+    publicPath: '/',
+    fingerprints: false,
+    icons: [
+      {
+        src: path.resolve('src/images/logo.png'),
+        sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+        destination: path.join('assets', 'icons'),
+      },
+    ],
+  }),
+  new InjectManifest({
+    swSrc: './src-sw.js',
+    swDest: 'service-worker.js',
+  }),
+],
+
 // TODO: Add CSS loaders and babel to webpack.
 
 module.exports = () => {
